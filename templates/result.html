@@ -1,0 +1,95 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <title>OCR Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .image img {
+            max-width: 100%;
+            max-height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            white-space: pre-line;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container gy-5">
+        <h1>OCR Result</h1>
+
+        <div class="row d-flex pb-3" style="justify-content: space-between;border-bottom: 0.3px solid rgb(94, 87, 87);">
+            <div class="col-3 btn btn-outline-primary">
+                Duration : {{time}}
+            </div>
+            <div class="col-3 btn btn-outline-primary">
+                Accuraccy : 97
+            </div>
+            <div   class="col-3 btn btn-outline-primary">
+                Download
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="image col-lg-6 col-md-6">
+                <img src="{{ image_filename }}" alt="Uploaded Image">
+            </div>
+    
+            <div class="result col-lg-6 col-md-6" style="height: 60vh; overflow-y:scroll;">
+                <p style="text-align: left; font-size: 20px;">{{ text }}</p>
+    
+                <!-- Add a back button -->
+                <a href="{{ url_for('back') }}">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
