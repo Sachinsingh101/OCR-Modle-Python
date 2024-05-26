@@ -1,5 +1,5 @@
 
-# OCR Flask Application
+# OCR Python Application
 
 This Flask application allows users to upload an image, perform Optical Character Recognition (OCR) on the image using Tesseract, and view the extracted text along with the uploaded image.
 
